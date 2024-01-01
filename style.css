@@ -1,0 +1,71 @@
+body {
+    margin-top: 20px
+}
+html { 
+    background: url("assets/geometric.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.column {
+    flex: 50;
+    padding: 10px;
+}
+.row {
+    display: flex;
+    max-width: 600px;
+    justify-content: center;
+}
+.window {
+    padding: 8px; /* Remove borders */
+}
+#left {
+    text-align: left;
+}
+#width {
+    max-width: 500px;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+#columnrow {
+    max-width: 600px;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+.about {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+#picture {
+    display: flex;
+    justify-content: center;
+}
+.projects {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+h1 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+h1, h4 {
+    width: 50%;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+.center {
+    text-align: center;
+    justify-content: center;
+}
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
