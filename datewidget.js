@@ -1,0 +1,1 @@
+fetch('https://yerijo.github.io/bdatewidget.html')  .then(response => response.text())  .then(data => {    document.getElementById('date-container').innerHTML = data;  });
