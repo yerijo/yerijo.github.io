@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
-      function resizeIframe(obj) {
-        obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-family: fantasy, Tahoma, sans-serif;
+        font-size:13px;
       }
-    </script>
+      table { 
+        border-collapse: collapse; 
+        width: 100%;
+      }
+      td, th { 
+        border: 1px solid #ccc; 
+        padding: 6px; 
+      }
+    </style>
   </head>
   <body>
     <div id="schedule-widget">
       <table>
         <thead>
           <tr>
-            <th>Task</th>
             <th>Time</th>
+            <th>Task</th>
           </tr>
         </thead>
         <tbody>
-          </tbody>
+        </tbody>
       </table>
     </div>
     <script>
@@ -28,53 +41,13 @@
       "routine":[
         {
           "task": "morning routine",
-          "start": "T08:30",
-          "end": "T09:00"
+          "start": "08:30",
+          "end": "09:00"
         },
         {
           "task": "work",
-          "start": "T09:00",
-          "end": "T13:00"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
+          "start": "09:00",
+          "end": "13:00"
         }
       ]
     },
@@ -83,23 +56,13 @@
       "routine":[
         {
           "task": "morning routine",
-          "start": "T08:30",
-          "end": "T09:00"
+          "start": "08:30",
+          "end": "09:00"
         },
         {
           "task": "work",
-          "start": "T09:00",
-          "end": "T13:00"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
+          "start": "09:00",
+          "end": "13:00"
         }
       ]
     },
@@ -108,98 +71,88 @@
       "routine":[
         {
           "task": "morning routine",
-          "start": "T08:30",
-          "end": "T09:00"
+          "start": "08:30",
+          "end": "09:00"
         },
         {
           "task": "work",
-          "start": "T09:00",
-          "end": "T13:00"
+          "start": "09:00",
+          "end": "13:00"
         },
         {
           "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
+          "start": "13:00",
+          "end": "13:30"
         },
         {
           "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
+          "start": "13:30",
+          "end": "15:00"
+        },
+        {
+          "task": "guitar/piano",
+          "start": "15:00",
+          "end": "16:00"
+        },
+        {
+          "task": "job search",
+          "start": "16:00",
+          "end": "19:00"
+        },
+        {
+          "task": "dinner",
+          "start": "19:00",
+          "end": "20:00"
+        },
+        {
+          "task": "leisure time",
+          "start": "20:00",
+          "end": "23:00"
         }
       ]
     },
     {
       "dayOfWeek": "Wednesday",
       "routine":[
-        {
-          "task": "morning routine",
-          "start": "T08:30",
-          "end": "T09:00"
+      {
+          "task": "wednesday routine",
+          "start": "08:30",
+          "end": "09:00"
         },
         {
           "task": "work",
-          "start": "T09:00",
-          "end": "T13:00"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
+          "start": "09:00",
+          "end": "13:00"
         }
       ]
     },
     {
       "dayOfWeek": "Thursday",
       "routine":[
-        {
-          "task": "morning routine",
-          "start": "T08:30",
-          "end": "T09:00"
+      {
+          "task": "thursday routine",
+          "start": "08:30",
+          "end": "09:00"
         },
         {
           "task": "work",
-          "start": "T09:00",
-          "end": "T13:00"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
+          "start": "09:00",
+          "end": "13:00"
         }
       ]
     },
     {
       "dayOfWeek": "Friday",
       "routine":[
-        {
-          "task": "morning routine",
-          "start": "T08:30",
-          "end": "T09:00"
+      {
+          "task": "friday routine",
+          "start": "08:30",
+          "end": "09:00"
         },
         {
           "task": "work",
-          "start": "T09:00",
-          "end": "T13:00"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
+          "start": "09:00",
+          "end": "13:00"
         }
       ]
     },
@@ -207,47 +160,47 @@
       "dayOfWeek": "Saturday",
       "routine":[
         {
-          "task": "morning routine",
-          "start": "T08:30",
-          "end": "T09:00"
+          "task": "saturday routine",
+          "start": "08:30",
+          "end": "09:00"
         },
         {
           "task": "work",
-          "start": "T09:00",
-          "end": "T13:00"
-        },
-        {
-          "task": "lunch",
-          "start": "T13:00",
-          "end": "T13:30"
-        },
-        {
-          "task": "work",
-          "start": "T13:30",
-          "end": "T16:30"
+          "start": "09:00",
+          "end": "13:00"
         }
       ]
     }
   ];
+      // Determine the current day
+      const currentDate = new Date();
 
-      // Get the Sunday data
-      const sundayData = scheduleData.find(day => day.dayOfWeek === "Sunday");
+      const currentDayOfWeek = currentDate.toLocaleDateString('en-US', {weekday: 'long'}); // Returns the full day name i.e. "Sunday"
+
+      // Filter scheduleData for the current day
+      const todaysData = scheduleData.find(day => day.dayOfWeek === currentDayOfWeek);
 
       // Get a reference to the table body
       const tableBody = document.querySelector('#schedule-widget tbody');
 
-      // Clear the table body in case of previous data
+      // Clear any previous content
       tableBody.innerHTML = '';
 
-      // Populate the table rows
-      sundayData.routine.forEach(item => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${item.task}</td>
-          <td>${item.start.substring(1)} - ${item.end.substring(1)}</td>
-        `;
-        tableBody.appendChild(row);
-      });
+      // Display schedule if current day is found
+      if (todaysData) {
+        // Populate the table with today's routine
+        todaysData.routine.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.start} - ${item.end}</td>
+            <td>${item.task}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } else {
+        // Display a message if no schedule is found for the current day
+        tableBody.innerHTML = '<tr><td colspan="2">No schedule found for today.</td></tr>';
+      }
     </script>
   </body>
 </html>
