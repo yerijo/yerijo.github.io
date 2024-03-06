@@ -3,7 +3,7 @@
   <head>
     <style>
       body {
-        display: flex;
+        display:flexbox;
         align-items: center;
         justify-content: center;
         height: 100%;
@@ -21,6 +21,16 @@
     </style>
   </head>
   <body>
+    <select id="daySelect">
+      <option value="Sunday">Sunday</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+    </select>
+    <div id="dayContent"></div>
     <div id="schedule-widget">
       <table>
         <thead>
@@ -172,34 +182,49 @@
       ]
     }
   ];
+
+      const daySelect = document.getElementById("daySelect");
+  
+      // Update content based on selected day (replace with your logic)
+      daySelect.addEventListener("change", function() {
+        currentDayOfWeek = this.value;
+        getRoutine(currentDayOfWeek);
+      });
+
       // Determine the current day
       const currentDate = new Date();
+      let currentDayOfWeek = currentDate.toLocaleDateString('en-US', {weekday: 'long'}); // Returns the full day name i.e. "Sunday"
+      getRoutine(currentDayOfWeek);
 
-      const currentDayOfWeek = currentDate.toLocaleDateString('en-US', {weekday: 'long'}); // Returns the full day name i.e. "Sunday"
+      function getRoutine(currentDayOfWeek) {
+        if (daySelect.value != currentDayOfWeek) {
+          daySelect.value = currentDayOfWeek;
+        }
 
-      // Filter scheduleData for the current day
-      const todaysData = scheduleData.find(day => day.dayOfWeek === currentDayOfWeek);
+        // Filter scheduleData for the current day
+        const todaysData = scheduleData.find(day => day.dayOfWeek === currentDayOfWeek);
 
-      // Get a reference to the table body
-      const tableBody = document.querySelector('#schedule-widget tbody');
+        // Get a reference to the table body
+        const tableBody = document.querySelector('#schedule-widget tbody');
 
-      // Clear any previous content
-      tableBody.innerHTML = '';
+        // Clear any previous content
+        tableBody.innerHTML = '';
 
-      // Display schedule if current day is found
-      if (todaysData) {
-        // Populate the table with today's routine
-        todaysData.routine.forEach(item => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${item.start} - ${item.end}</td>
-            <td>${item.task}</td>
-          `;
-          tableBody.appendChild(row);
-        });
-      } else {
-        // Display a message if no schedule is found for the current day
-        tableBody.innerHTML = '<tr><td colspan="2">No schedule found for today.</td></tr>';
+        // Display schedule if current day is found
+        if (todaysData) {
+          // Populate the table with today's routine
+          todaysData.routine.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${item.start} - ${item.end}</td>
+              <td>${item.task}</td>
+            `;
+            tableBody.appendChild(row);
+          });
+        } else {
+          // Display a message if no schedule is found for the current day
+          tableBody.innerHTML = '<tr><td colspan="2">No schedule found for today.</td></tr>';
+        }
       }
     </script>
   </body>
