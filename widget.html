@@ -21,17 +21,19 @@
     </style>
   </head>
   <body>
-    <select id="daySelect">
-      <option value="Sunday">Sunday</option>
-      <option value="Monday">Monday</option>
-      <option value="Tuesday">Tuesday</option>
-      <option value="Wednesday">Wednesday</option>
-      <option value="Thursday">Thursday</option>
-      <option value="Friday">Friday</option>
-      <option value="Saturday">Saturday</option>
-    </select>
-    <div id="dayContent"></div>
-    <div id="schedule-widget">
+    <div style="display:flex; justify-content:space-between">
+      <div id="date"></div>
+      <select id="daySelect">
+        <option value="Sunday">Sunday</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+      </select>
+    </div>
+    <div id="schedule-widget" style="margin-top:10px">
       <table>
         <thead>
           <tr>
@@ -339,6 +341,11 @@
       // Determine the current day
       const currentDate = new Date();
       let currentDayOfWeek = currentDate.toLocaleDateString('en-US', {weekday: 'long'}); // Returns the full day name i.e. "Sunday"
+      
+      const options = { weekday: 'long',  month: 'long', day: 'numeric' };
+      const formattedDate = currentDate.toLocaleDateString('en-US', options);
+      document.getElementById('date').textContent = formattedDate;
+
       getRoutine(currentDayOfWeek);
 
       function getRoutine(currentDayOfWeek) {
